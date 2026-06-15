@@ -226,6 +226,7 @@ h1, h2, h3 {
 .hero-content h1 {
   font-size: 42px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .hero-content p {
@@ -556,6 +557,9 @@ h1, h2, h3 {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .reset-hardware-btn:hover {
@@ -721,10 +725,19 @@ h1, h2, h3 {
 }
 
 .navbar-logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: var(--primary);
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo img {
+  display: block;
+  height: 45px;
+  width: auto;
 }
 
 .navbar-menu {
@@ -800,7 +813,7 @@ h1, h2, h3 {
 
 .category-title {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 19px;
   border-bottom: 2px solid #f1f5f9;
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -861,4 +874,24 @@ h1, h2, h3 {
 
 .faq-answer li {
   margin-bottom: 6px;
+}
+
+
+
+
+
+.nav-svg-icon {
+  width: 50px; 
+  height: 50px;
+  display: inline-block;
+  vertical-align: top;
+  object-fit: contain;
+}
+
+.nav-svg-icon-update {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: top;
+  object-fit: contain;
 }

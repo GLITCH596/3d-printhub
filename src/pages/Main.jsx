@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import $ from 'jquery'; // Импортируем jQuery строго по плану!
+import $ from 'jquery';
 
 function Main() {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ function Main() {
           <h1>Управляй 3D-печатью как профессионал</h1>
           <p>Автоматизация расчетов себестоимости, умный учет остатков пластика на складе и контроль технического состояния вашего принтера в одном месте.</p>
           <button className="hero-btn" onClick={() => navigate('/calculator')}>
-            🚀 Начать расчет
+            Начать расчет
           </button>
         </div>
       </section>

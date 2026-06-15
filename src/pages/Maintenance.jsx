@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import updateSvg from "../assets/update.svg";
 
 function Maintenance() {
   // Список принтеров из localStorage
@@ -126,7 +127,7 @@ function Maintenance() {
 
   return (
     <div className="maintenance-page">
-      <h2 className="page-main-title">🔧 Мониторинг технического состояния оборудования</h2>
+      <h2 className="page-main-title">Мониторинг технического состояния оборудования</h2>
 
       {printers.length === 0 ? (
         <p style={{ textAlign: 'center', color: '#666', fontStyle: 'italic', marginTop: '40px' }}>
@@ -188,11 +189,9 @@ function Maintenance() {
                         />
                         <span className="hours-label">моточасов</span>
                       </div>
-                      <button 
-                        className="reset-hardware-btn"
-                        onClick={() => handleResetTotalHours(printer.id)}
-                      >
-                        ♻️ Заменил принтер (Сброс в 0)
+                      <button className="reset-hardware-btn" onClick={() => handleResetTotalHours(printer.id)}>
+                        <img src={updateSvg} alt='Сброс' className='nav-svg-icon-update'/>
+                        <span>Заменил принтер (Сброс в 0)</span>
                       </button>
                     </div>
 
@@ -231,7 +230,7 @@ function Maintenance() {
                       </div>
                       <div className="item-actions">
                         <span className="remaining-text">Остаток ресурса: {nozzlePct}%</span>
-                        <button className="reset-btn" onClick={() => handleResetComponent(printer.id, 'nozzleHours')}>🔄 Заменил сопло</button>
+                        <button className="reset-btn" onClick={() => handleResetComponent(printer.id, 'nozzleHours')}>Заменил сопло</button>
                       </div>
                     </div>
 
@@ -249,7 +248,7 @@ function Maintenance() {
                       </div>
                       <div className="item-actions">
                         <span className="remaining-text">Остаток ресурса: {beltPct}%</span>
-                        <button className="reset-btn" onClick={() => handleResetComponent(printer.id, 'beltHours')}>🔄 Обслужил ремни</button>
+                        <button className="reset-btn" onClick={() => handleResetComponent(printer.id, 'beltHours')}>Обслужил ремни</button>
                       </div>
                     </div>
 
@@ -267,7 +266,7 @@ function Maintenance() {
                       </div>
                       <div className="item-actions">
                         <span className="remaining-text">Остаток ресурса: {lubPct}%</span>
-                        <button className="reset-btn" onClick={() => handleResetComponent(printer.id, 'lubricationHours')}>🔄 Смазал оси</button>
+                        <button className="reset-btn" onClick={() => handleResetComponent(printer.id, 'lubricationHours')}>Смазал оси</button>
                       </div>
                     </div>
 

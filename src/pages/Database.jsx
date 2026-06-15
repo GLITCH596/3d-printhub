@@ -68,7 +68,7 @@ function Database() {
 
   return (
     <div className="database-page">
-      <h2 className="page-main-title">📚 База знаний и решение проблем (Траблшутинг)</h2>
+      <h2 className="page-main-title">База знаний и решение проблем</h2>
 
       {/* Поле поиска */}
       <div className="search-wrapper">
@@ -76,7 +76,7 @@ function Database() {
           type="text" 
           ref={searchRef}
           className="kb-search-input" 
-          placeholder="🔍 Введите ключевое слово для поиска (например: адгезия, сопло, PLA)..." 
+          placeholder="Введите ключевое слово для поиска (например: адгезия, сопло, PLA)..." 
         />
       </div>
 
@@ -84,7 +84,8 @@ function Database() {
         
         {/* Категория 1: Дефекты печати */}
         <div className="category-block">
-          <h3 className="category-title">🔴 Проблемы и дефекты печати</h3>
+          <img src=''/>
+          <h3 className="category-title">Проблемы и дефекты печати</h3>
           
           <div className="faq-item">
             <div className="faq-question">
@@ -122,7 +123,7 @@ function Database() {
 
         {/* Категория 2: Настройки слайсера */}
         <div className="category-block">
-          <h3 className="category-title">⚙️ Тюнинг слайсера (Cura / PrusaSlicer / OrcaSlicer)</h3>
+          <h3 className="category-title">Тюнинг слайсера (Cura / PrusaSlicer / OrcaSlicer)</h3>
           
           <div className="faq-item">
             <div className="faq-question">
@@ -142,7 +143,7 @@ function Database() {
 
           <div className="faq-item">
             <div className="faq-question">
-              <span>Паутина и «волосатость» модели (Стрингинг)</span>
+              <span className='faq-title'>Паутина на модели(Стрингинг)</span>
               <span className="arrow-icon">▼</span>
             </div>
             <div className="faq-answer">

@@ -11,7 +11,7 @@ import Database from './pages/Database';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/3d-printhub">
       <Header />
       <div className="storage-container">
         <Routes>
