@@ -83,22 +83,6 @@ function Main() {
         </div>
       </section>
 
-      {/* 3. ИНТЕРАКТИВНАЯ СТАТИСТИКА ПЛАТФОРМЫ */}
-      <section className="stats-section">
-        <div className="stat-item">
-          <h3>&gt; 1</h3>
-          <p>Успешных расчетов</p>
-        </div>
-        <div className="stat-item">
-          <h3>100%</h3>
-          <p>Контроля расходов</p>
-        </div>
-        <div className="stat-item">
-          <h3>24/7</h3>
-          <p>Доступ к складу материалов</p>
-        </div>
-      </section>
-
       {/* 4. СЛАЙДЕР ОТЗЫВОВ (Управляется через jQuery) */}
       <section className="reviews-section" ref={sliderRef}>
         <h2>Что говорят мейкеры о нашем сервисе</h2>
