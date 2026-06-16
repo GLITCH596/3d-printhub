@@ -327,12 +327,32 @@ h1, h2, h3 {
   min-height: 180px;
 }
 
+/* Контейнер для слайдов */
 .slides-container {
-  flex: 1;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  min-height: 160px; 
+  margin: 0 auto;
+  overflow: hidden;  
 }
 
 .slide {
-  display: none; /* Контролируется через jQuery */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.slide.active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
 }
 
 .review-text {

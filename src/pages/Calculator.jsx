@@ -89,12 +89,7 @@ function Calculator() {
               <span style={{ fontSize: '13px' }}>ч.</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px'}}>
-              <input 
-                type="number" min="0" max="59"
-                style={{ width: '50px', padding: '5px', textAlign: 'center', fontWeight: 'bold'}}
-                value={displayMins === 0 && totalMinutes === '' ? '' : displayMins}
-                onChange={handleMinsChange}
-              />
+              <input type="number" min="0" max="59" style={{ width: '50px', padding: '5px', textAlign: 'center', fontWeight: 'bold'}} value={displayMins === 0 && totalMinutes === '' ? '' : displayMins} onChange={handleMinsChange}/>
               <span style={{ fontSize: '13px' }}>мин.</span>
             </div>
           </div>
@@ -106,7 +101,7 @@ function Calculator() {
         </div>
 
         <div className="form-group" style={{ marginBottom: '15px' }}>
-          <label>Цена plastic за 1 кг (руб)</label>
+          <label>Цена филамента за 1 кг (руб)</label>
           <input type="number" value={plasticPrice} onChange={(e) => setPlasticPrice(handleNumberInput(e.target.value))} />
         </div>
 

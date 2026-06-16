@@ -6,41 +6,44 @@ function Main() {
   const navigate = useNavigate();
   const sliderRef = useRef(null);
 
-  // Интеграция jQuery по плану разработки
   useEffect(() => {
-    // Находим все слайды внутри нашего рефа
     const slides = $(sliderRef.current).find('.slide');
     let currentSlide = 0;
 
-    // Показываем первый слайд сразу
-    slides.hide().eq(currentSlide).show();
+    // Инициализация: ставим класс active только первому слайду
+    slides.removeClass('active').eq(currentSlide).addClass('active');
 
-    // Функция переключения слайдов с эффектами jQuery
     const nextSlide = () => {
-      slides.eq(currentSlide).fadeOut(400, () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides.eq(currentSlide).fadeIn(400);
-      });
+      slides.eq(currentSlide).removeClass('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides.eq(currentSlide).addClass('active');
     };
 
-    // Запускаем автоматическое переключение каждые 4 секунды
-    const interval = setInterval(nextSlide, 4000);
+    const prevSlide = () => {
+      slides.eq(currentSlide).removeClass('active');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides.eq(currentSlide).addClass('active');
+    };
 
-    // Стрелки переключения (ручное управление через jQuery)
-    $(sliderRef.current).find('.next-btn').on('click', () => {
+    // Автопрокрутка
+    let interval = setInterval(nextSlide, 4000);
+
+    const resetInterval = () => {
       clearInterval(interval);
+      interval = setInterval(nextSlide, 4000);
+    };
+
+    // Обработчики кликов (срабатывают мгновенно)
+    $(sliderRef.current).find('.next-btn').on('click', () => {
+      resetInterval();
       nextSlide();
     });
 
     $(sliderRef.current).find('.prev-btn').on('click', () => {
-      clearInterval(interval);
-      slides.eq(currentSlide).fadeOut(400, () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        slides.eq(currentSlide).fadeIn(400);
-      });
+      resetInterval();
+      prevSlide();
     });
 
-    // Обязательно очищаем обработчики и таймеры при уходе со страницы
     return () => {
       clearInterval(interval);
       if (sliderRef.current) {
@@ -83,7 +86,7 @@ function Main() {
         </div>
       </section>
 
-      {/* 4. СЛАЙДЕР ОТЗЫВОВ (Управляется через jQuery) */}
+      {/* 3. СЛАЙДЕР ОТЗЫВОВ */}
       <section className="reviews-section" ref={sliderRef}>
         <h2>Что говорят мейкеры о нашем сервисе</h2>
         <div className="slider-wrapper">
@@ -108,7 +111,7 @@ function Main() {
         </div>
       </section>
 
-      {/* 5. ПОДВАЛ (ФУТЕР) */}
+      {/* 4. ПОДВАЛ (ФУТЕР) */}
       <footer className="landing-footer">
         <div className="footer-content">
           <p>© 2026 3D-PrintHub. Все права защищены. Студент: Денисов А.</p>
